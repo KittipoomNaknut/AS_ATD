@@ -6,7 +6,7 @@ import { env } from '@/lib/env';
 export async function proxy(req: NextRequest) {
   const res = NextResponse.next();
 
-  const supabase = createServerClient(env.supabaseUrl, env.supabaseAnonKey, {
+  const supabase = createServerClient(env.supabaseUrl, env.supabasePublishableKey, {
     cookies: {
       getAll: () => req.cookies.getAll(),
       setAll: (toSet: { name: string; value: string; options: CookieOptions }[]) =>

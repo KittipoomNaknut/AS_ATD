@@ -6,7 +6,7 @@ import { env } from '@/lib/env';
 // SSR client (อ่าน session ของอาจารย์จาก cookies)
 export async function createClient() {
   const cookieStore = await cookies();
-  return createServerClient(env.supabaseUrl, env.supabaseAnonKey, {
+  return createServerClient(env.supabaseUrl, env.supabasePublishableKey, {
     cookies: {
       getAll() {
         return cookieStore.getAll();
@@ -26,7 +26,7 @@ export async function createClient() {
 
 // Service-role client (bypass RLS — ใช้เฉพาะใน route handler ฝั่ง server)
 export function createServiceClient() {
-  return createSupabaseClient(env.supabaseUrl, env.supabaseServiceRoleKey, {
+  return createSupabaseClient(env.supabaseUrl, env.supabaseSecretKey, {
     auth: { persistSession: false, autoRefreshToken: false },
   });
 }

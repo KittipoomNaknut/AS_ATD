@@ -6,9 +6,9 @@ function required(name: string): string {
 
 export const env = {
   supabaseUrl: required('NEXT_PUBLIC_SUPABASE_URL'),
-  supabaseAnonKey: required('NEXT_PUBLIC_SUPABASE_ANON_KEY'),
-  get supabaseServiceRoleKey() {
-    return required('SUPABASE_SERVICE_ROLE_KEY');
+  supabasePublishableKey: required('NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY'),
+  get supabaseSecretKey() {
+    return required('SUPABASE_SECRET_KEY');
   },
   get qrJwtSecret() {
     return required('QR_JWT_SECRET');
