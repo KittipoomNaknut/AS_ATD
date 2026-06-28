@@ -24,13 +24,29 @@ pnpm-debug.log*
 
 # Node
 node_modules/
+.pnp
+.pnp.*
 dist/
 build/
-.next/
-.nuxt/
 .turbo/
 .cache/
 coverage/
+
+# Next.js
+.next/
+out/
+next-env.d.ts
+*.tsbuildinfo
+
+# Vercel
+.vercel/
+
+# Supabase CLI
+supabase/.branches/
+supabase/.temp/
+
+# misc
+*.pem
 
 # Python
 __pycache__/
